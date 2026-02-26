@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alimentación Segura | Método BLW & Recetario</title>
-    <meta name="description" content="Aprende cortes seguros y recetas nutritivas para tu bebé. Transforma el miedo en seguridad con nuestro sistema completo de alimentación.">
+    <meta name="description" content="Aprende cortes seguros y recetas nutritivas para tu bebé. Transforma el miedo en seguridad.">
     
-    <meta property="og:title" content="Alimentación Segura | 180+ Recetas BLW">
-    <meta property="og:description" content="Menús, guía de alérgenos y cortes seguros. ¡Todo lo que necesitas!">
-    <meta property="og:image" content="https://img.freepik.com/fotos-premium/bebe-feliz-sentado-su-silla-comiendo-si-mismo-manos-cara-manchadas-comida-bebes_1062229-1041.jpg">
-    <meta property="og:type" content="website">
-
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,7 +18,6 @@
     fbq('init', '2012635556262710');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2012635556262710&ev=PageView&noscript=1"/></noscript>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -35,191 +29,127 @@
         .bg-baby-warm { background-color: #FFF9F5; }
         .text-coral { color: #FF7F67; }
         .bg-coral { background-color: #FF7F67; }
-
-        /* PUNTO 1: EFECTO HOVER INTERACTIVO */
-        .hover-interactive {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-        .hover-interactive:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(255, 127, 103, 0.2);
-            border-color: #FF7F67;
-        }
-
         .btn-glow { 
             background: linear-gradient(135deg, #FF7F67 0%, #FF4F37 100%); 
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 127, 103, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 127, 103, 0); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(255, 127, 103, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 127, 103, 0); }
         }
-        .guarantee-seal { background: #fef3c7; border: 2px dashed #f59e0b; }
     </style>
 </head>
 <body class="bg-baby-warm text-gray-800 antialiased">
 
-    <div class="bg-black text-white text-center py-2 text-[11px] font-bold uppercase tracking-widest px-4 sticky top-0 z-50">
-        ⚠️ ATENCIÓN: Solo quedan <span class="text-yellow-400" id="slots">14</span> cupos con el 85% de descuento.
+    <div class="bg-red-600 text-white text-center py-2 text-[12px] font-bold uppercase tracking-wider px-4 sticky top-0 z-50">
+        ⚡ OFERTA DE LANZAMIENTO: Solo quedan <span id="slots" class="underline">14</span> cupos disponibles.
     </div>
 
-    <header class="py-12 md:py-20 px-6 bg-white rounded-b-[4rem] shadow-md">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <header class="py-10 md:py-16 px-6 bg-white rounded-b-[3rem] shadow-lg">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
             <div>
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="bg-coral/10 text-coral px-3 py-1 rounded-full text-xs font-bold uppercase">Aprobado por Mamás Reales</span>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 text-slate-900">
-                    Transforma el miedo en <span class="italic text-coral">seguridad</span>.
+                <p class="text-coral font-bold uppercase tracking-widest text-sm mb-2 text-center lg:text-left">¡Atención Mamá y Papá!</p>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6 text-slate-900 text-center lg:text-left">
+                    Transforma el miedo en <span class="text-coral italic">seguridad</span> al alimentar a tu bebé.
                 </h1>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed border-l-4 border-coral pl-6">
-                    Aprende los cortes seguros y las recetas nutritivas que harán que tu bebé coma de todo, <span class="font-bold text-slate-800 underline">sin riesgo de atragantamiento.</span>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed border-l-4 border-coral pl-6 italic">
+                    Descubre el método exacto para introducir sólidos con confianza, evitando atragantamientos y criando un bebé que come de todo.
                 </p>
                 <div class="space-y-4">
-                    <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow inline-block w-full text-white text-center px-8 py-6 rounded-3xl font-black text-2xl italic tracking-tight">
-                        ¡SÍ, QUIERO LA GUÍA (50% OFF)!
+                    <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow inline-block w-full text-white text-center px-8 py-5 rounded-2xl font-black text-xl shadow-2xl">
+                        🚀 ¡ACCEDER AHORA CON EL 85% DE DESCUENTO!
                     </a>
-                    <p class="text-center text-xs text-gray-400 italic">🔒 Pago seguro y acceso inmediato</p>
+                    <div class="flex items-center justify-center gap-4 text-xs text-gray-400 font-bold uppercase">
+                        <span><i class="fas fa-check-circle text-green-500"></i> Acceso de por vida</span>
+                        <span><i class="fas fa-check-circle text-green-500"></i> Pago Único</span>
+                    </div>
                 </div>
             </div>
-            <div class="relative">
+            <div class="relative group">
                 <img src="https://img.freepik.com/fotos-premium/bebe-feliz-sentado-su-silla-comiendo-si-mismo-manos-cara-manchadas-comida-bebes_1062229-1041.jpg" 
-                     class="rounded-[3rem] shadow-2xl w-full h-[500px] object-cover border-8 border-baby-warm" alt="Bebé comiendo sano">
-                <div class="absolute -top-4 -right-4 bg-yellow-400 p-4 rounded-2xl shadow-lg rotate-12">
-                    <p class="text-black font-black text-xl">180+ RECETAS</p>
+                     class="rounded-[2rem] shadow-2xl w-full h-auto object-cover border-4 border-coral/20 transform group-hover:scale-[1.01] transition-all" alt="Bebé saludable">
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
+                    <p class="text-coral font-black text-2xl">+180 Recetas</p>
+                    <p class="text-gray-500 text-xs uppercase font-bold">Nutrición de verdad</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-12 italic leading-tight">¿Tienes ese "nudo en el estómago" cada vez que le ofreces comida sólida?</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <div class="bg-white p-8 rounded-3xl shadow-sm italic hover-interactive border border-transparent">
-                    <i class="fas fa-exclamation-triangle text-coral mb-4 text-2xl"></i>
-                    <p class="text-gray-600">Miedo constante a que no sepa tragar y se atragante.</p>
+    <section class="py-20 px-6 bg-baby-warm">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold italic mb-4">¡Si te inscribes HOY, te llevas todos estos regalos!</h2>
+                <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Todo esto está incluido por un pago único de $9.90 USD</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-md border-b-8 border-coral">
+                    <div class="bg-coral/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 text-coral text-3xl">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h4 class="font-black text-xl mb-2">BONO 1: Guía de Introducción</h4>
+                    <p class="text-gray-600 text-sm italic">Paso a paso para empezar desde el día 1 sin errores.</p>
+                    <p class="text-coral font-bold mt-4">VALOR: <span class="line-through text-gray-400">$27 USD</span> - GRATIS</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm italic hover-interactive border border-transparent">
-                    <i class="fas fa-clock text-coral mb-4 text-2xl"></i>
-                    <p class="text-gray-600">Cansancio de cocinar lo mismo y que termine en el suelo.</p>
+
+                <div class="bg-white p-6 rounded-3xl shadow-md border-b-8 border-coral">
+                    <div class="bg-coral/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 text-coral text-3xl">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <h4 class="font-black text-xl mb-2">BONO 2: Batidos Saludables</h4>
+                    <p class="text-gray-600 text-sm italic">Recetas clave para bebés que necesitan ganar peso sanamente.</p>
+                    <p class="text-coral font-bold mt-4">VALOR: <span class="line-through text-gray-400">$19 USD</span> - GRATIS</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm italic hover-interactive border border-transparent">
-                    <i class="fas fa-heartbeat text-coral mb-4 text-2xl"></i>
-                    <p class="text-gray-600">Inseguridad sobre si está recibiendo los nutrientes que necesita.</p>
+
+                <div class="bg-white p-6 rounded-3xl shadow-md border-b-8 border-coral">
+                    <div class="bg-coral/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 text-coral text-3xl">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h4 class="font-black text-xl mb-2">BONO 3: Guía de Alérgenos</h4>
+                    <p class="text-gray-600 text-sm italic">Identifica y ofrece alimentos de riesgo de forma segura.</p>
+                    <p class="text-coral font-bold mt-4">VALOR: <span class="line-through text-gray-400">$25 USD</span> - GRATIS</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-6 italic">No solo es un libro digital...</h2>
-            <p class="text-center text-gray-500 mb-16 max-w-2xl mx-auto italic">Es un sistema completo para que tú y tu bebé disfruten el momento. Te enseñamos a usar lo que tienes en casa.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center hover-interactive p-4 rounded-3xl border border-transparent">
-                    <div class="bg-baby-warm p-6 rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center shadow-inner">
-                        <i class="fas fa-utensils text-coral text-4xl"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2 italic">Cortes BLW</h4>
-                    <p class="text-sm text-gray-500 italic">Aprende la forma exacta de ofrecer cada alimento.</p>
-                </div>
-                <div class="text-center hover-interactive p-4 rounded-3xl border border-transparent">
-                    <div class="bg-baby-warm p-6 rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center shadow-inner">
-                        <i class="fas fa-apple-alt text-coral text-4xl"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2 italic">Nutrición Real</h4>
-                    <p class="text-sm text-gray-500 italic">Sin azúcar, sin ultraprocesados, pura salud.</p>
-                </div>
-                <div class="text-center hover-interactive p-4 rounded-3xl border border-transparent">
-                    <div class="bg-baby-warm p-6 rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center shadow-inner">
-                        <i class="fas fa-shield-virus text-coral text-4xl"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2 italic">Seguridad</h4>
-                    <p class="text-sm text-gray-500 italic">Diferencia arcada de atragantamiento con calma.</p>
-                </div>
-                <div class="text-center hover-interactive p-4 rounded-3xl border border-transparent">
-                    <div class="bg-baby-warm p-6 rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center shadow-inner">
-                        <i class="fas fa-check-double text-coral text-4xl"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2 italic">Acceso Vitalicio</h4>
-                    <p class="text-sm text-gray-500 italic">Para siempre en tu celular o tablet.</p>
-                </div>
+    <section class="py-16 px-6 bg-slate-900">
+        <div class="max-w-2xl mx-auto text-center text-white bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
+            <h3 class="text-3xl font-bold italic mb-6">Resumen de tu acceso hoy:</h3>
+            <ul class="text-left space-y-3 mb-8 text-sm md:text-base opacity-90">
+                <li class="flex items-center gap-3"><i class="fas fa-check text-coral"></i> Mega Recetario 180+ Recetas</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check text-coral"></i> Bono 1: Guía de Introducción Segura</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check text-coral"></i> Bono 2: Batidos Subida de Peso</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check text-coral"></i> Bono 3: Alimentos Alergénicos</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check text-coral"></i> Soporte y Acceso de por Vida</li>
+            </ul>
+            <p class="text-gray-400 line-through text-xl mb-2 italic font-bold uppercase">VALOR REAL: $197 USD</p>
+            <div class="mb-8">
+                <span class="text-7xl font-black text-coral leading-none">$9.90</span>
+                <span class="text-xl font-bold">USD</span>
             </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6">
-        <div class="max-w-xl mx-auto bg-slate-900 text-white rounded-[3.5rem] p-10 md:p-16 shadow-2xl relative border-[10px] border-white hover-interactive">
-            <h3 class="text-4xl font-bold text-center mb-8 italic">Llévate todo por menos de lo que cuesta un combo de comida rápida</h3>
-            
-            <div class="space-y-4 mb-10 text-sm border-b border-white/10 pb-8">
-                <div class="flex justify-between italic"><span>📖 Mega Recetario (180+ Recetas)</span> <span class="text-gray-400">$67.00</span></div>
-                <div class="flex justify-between italic"><span>🥗 Menú x 3 Semanas (Incluye Snacks)</span> <span class="text-yellow-400">Gratis</span></div>
-                <div class="flex justify-between italic text-yellow-400 font-bold"><span>🎁 Guía de Alimentación Complementaria</span> <span class="uppercase">Gratis</span></div>
-                <div class="flex justify-between italic text-yellow-400 font-bold"><span>🎁 Alimentos Alergénicos</span> <span class="uppercase">Gratis</span></div>
-                <div class="flex justify-between italic text-yellow-400 font-bold"><span>🎁 Alimentos Laxantes o Astringentes</span> <span class="uppercase">Gratis</span></div>
-            </div>
-
-            <div class="text-center mb-10">
-                <p class="text-gray-400 line-through text-xl italic mb-2">Valor Total: $197.00 USD</p>
-                <div class="flex items-center justify-center gap-2">
-                    <span class="text-8xl font-black text-coral">$9.99</span>
-                    <span class="text-2xl font-bold">USD</span>
-                </div>
-                <p class="text-yellow-400 font-bold mt-2 italic">Único pago. Acceso para siempre.</p>
-            </div>
-
-            <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow block w-full py-7 rounded-3xl text-white text-2xl font-black uppercase italic text-center shadow-xl">
-                ¡EMPEZAR AHORA!
+            <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow block w-full py-6 rounded-3xl text-white text-2xl font-black uppercase italic shadow-xl">
+                ¡SÍ, QUIERO TODO POR $9.90!
             </a>
-
-            <div class="guarantee-seal mt-12 p-6 rounded-2xl flex items-center gap-4 text-black">
-                <i class="fas fa-medal text-4xl text-yellow-600"></i>
-                <div class="text-left">
-                    <p class="font-black text-xs uppercase italic tracking-tighter">Garantía Incondicional</p>
-                    <p class="text-[11px] leading-tight italic">Prueba la guía por 15 días. Si no te quita el miedo, te devolvemos el dinero sin preguntas.</p>
-                </div>
-            </div>
+            <p class="mt-4 text-[10px] uppercase tracking-widest text-gray-400">Oferta válida por las próximas 24 horas</p>
         </div>
     </section>
 
-    <section class="py-20 bg-white px-6 text-center">
-        <h2 class="text-4xl font-bold mb-16 italic">"Ojalá hubiera tenido esto antes..."</h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 italic">
-            <div class="bg-baby-warm p-8 rounded-3xl shadow-sm hover-interactive border border-transparent">
-                <div class="text-yellow-400 mb-4 italic">★★★★★</div>
-                <p class="text-gray-600 mb-6 italic">"Mi bebé no quería comer nada. Probé las recetas de avena y plátano y por fin logré que desayunara feliz. Vale cada centavo."</p>
-                <p class="font-black">— Laura M.</p>
-            </div>
-            <div class="bg-baby-warm p-8 rounded-3xl shadow-sm border-2 border-coral hover-interactive">
-                <div class="text-yellow-400 mb-4 italic">★★★★★</div>
-                <p class="text-gray-600 mb-6 italic">"Lo mejor es la guía de cortes. Tenía pánico de darle trozos, pero con las fotos entendí cómo hacerlo seguro. ¡Gracias!"</p>
-                <p class="font-black">— Sofia R.</p>
-            </div>
-            <div class="bg-baby-warm p-8 rounded-3xl shadow-sm hover-interactive border border-transparent">
-                <div class="text-yellow-400 mb-4 italic">★★★★★</div>
-                <p class="text-gray-600 mb-6 italic">"Súper completa. Los snacks saludables me salvaron las tardes. Mi pediatra me preguntó dónde sacaba tantas ideas."</p>
-                <p class="font-black">— Valentina G.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 bg-slate-900 text-center text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] px-6">
-        <p class="mb-4 text-white">&copy; 2026 Alimentación Segura | Nutriendo con Amor</p>
-        <p class="max-w-2xl mx-auto leading-relaxed">Este producto no sustituye el consejo médico profesional. Consulte siempre con su pediatra antes de realizar cambios en la dieta de su bebé.</p>
+    <footer class="py-8 bg-black text-center text-gray-500 text-[10px] font-bold px-6">
+        <p class="text-white mb-2 italic">&copy; 2026 Alimentación Segura | Nutriendo con Amor</p>
+        <p>No sustituimos consejos médicos. Consulta a tu pediatra.</p>
     </footer>
 
     <script>
         let slots = 14;
-        const interval = setInterval(() => {
-            if(slots > 3) {
+        setInterval(() => {
+            if(slots > 2) {
                 slots--;
                 document.getElementById('slots').innerText = slots;
             }
-        }, 45000);
+        }, 35000);
     </script>
 
 </body>
