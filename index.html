@@ -3,266 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentación Segura | Método BLW & Recetario</title>
-    
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2012635556262710');
-    fbq('track', 'PageView');
-    </script>
+    <title>Alimentación Segura | El Sistema Definitivo</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Quicksand', sans-serif; }
+        body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F5; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        .bg-baby-warm { background-color: #FFF9F5; }
         .text-coral { color: #FF7F67; }
         .bg-coral { background-color: #FF7F67; }
-        .btn-glow { 
-            background: linear-gradient(135deg, #FF7F67 0%, #FF4F37 100%); 
-            animation: pulse 2s infinite;
+        .bg-crema { background-color: #FFF9F5; }
+        .border-coral { border-color: #FF7F67; }
+        
+        .shadow-premium { box-shadow: 0 20px 50px rgba(255, 127, 103, 0.15); }
+        
+        .btn-pulse {
+            animation: pulse-red 2.5s infinite;
+            background: linear-gradient(135deg, #FF7F67 0%, #FF5A3D 100%);
         }
-        @keyframes pulse {
+        @keyframes pulse-red {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 127, 103, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 127, 103, 0); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(255, 127, 103, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 127, 103, 0); }
         }
-        .card-shadow { box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .divider-wave { fill: #FFF9F5; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .check-icon { color: #10B981; }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased">
+<body class="antialiased text-slate-800">
 
-    <div class="bg-red-600 text-white text-center py-2 text-[11px] font-bold uppercase tracking-[0.2em] px-4 sticky top-0 z-50 shadow-md">
-        ⚠️ ¡OFERTA POR TIEMPO LIMITADO! Solo quedan <span id="slots" class="text-yellow-300">14</span> cupos disponibles.
+    <div class="bg-black text-white text-center py-2.5 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] sticky top-0 z-50">
+        ⌛️ LA OFERTA TERMINA AL FINALIZAR EL DÍA. <span class="text-coral" id="counter">00:00:00</span>
     </div>
 
-    <header class="relative pt-12 pb-20 md:pt-20 md:pb-32 px-6 overflow-hidden bg-baby-warm">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="text-center lg:text-left">
-                <span class="inline-block bg-coral/10 text-coral px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">Método BLW Seguro y Nutritivo</span>
-                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 text-slate-900">
-                    Transforma el miedo en <span class="text-coral italic underline decoration-coral/30">seguridad</span>.
-                </h1>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                    Aprende los cortes exactos y recetas que harán que tu bebé coma de todo, sin riesgo de atragantamiento.
-                </p>
-                <div class="space-y-6">
-                    <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow inline-block w-full text-white text-center px-8 py-6 rounded-3xl font-black text-2xl shadow-2xl">
-                        ¡SÍ, QUIERO LA GUÍA COMPLETA!
-                    </a>
-                    <div class="flex items-center justify-center lg:justify-start gap-6">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Hotmart_Logo.png" class="h-6 opacity-50 grayscale" alt="Hotmart">
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none">Compra 100% segura <br> Acceso inmediato</p>
-                    </div>
+    <header class="relative pt-10 pb-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Más de 12,000 familias transformadas</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight max-w-4xl mx-auto text-slate-900">
+                Disfruta ver a tu bebé comer <span class="text-coral italic underline">sin miedo</span> a los atragantamientos.
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                El sistema paso a paso con 180+ recetas y guías de cortes seguros para que la alimentación complementaria sea el mejor momento del día.
+            </p>
+
+            <div class="relative max-w-4xl mx-auto mb-12">
+                <div class="absolute -top-6 -right-6 bg-yellow-400 text-black font-black p-5 rounded-2xl rotate-12 shadow-xl z-10 hidden md:block">
+                    <p class="text-2xl">95% OFF</p>
+                    <p class="text-xs">SOLO HOY</p>
                 </div>
-            </div>
-            <div class="relative">
-                <div class="absolute inset-0 bg-coral rounded-full blur-[100px] opacity-10 -z-10 animate-pulse"></div>
                 <img src="https://img.freepik.com/fotos-premium/bebe-feliz-sentado-su-silla-comiendo-si-mismo-manos-cara-manchadas-comida-bebes_1062229-1041.jpg" 
-                     class="rounded-[3.5rem] shadow-2xl w-full h-[500px] object-cover border-[12px] border-white transform rotate-2" alt="Bebé comiendo">
+                     class="rounded-[2.5rem] shadow-premium border-[12px] border-white w-full h-[300px] md:h-[500px] object-cover" alt="Bebé comiendo">
             </div>
+
+            <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-pulse inline-block w-full md:w-auto md:px-20 py-7 rounded-3xl text-white font-black text-2xl italic uppercase shadow-2xl">
+                ¡Sí, quiero empezar ahora!
+            </a>
+            <p class="mt-4 text-xs text-slate-400">Pago seguro • Acceso inmediato • Sin suscripciones mensuales</p>
         </div>
     </header>
 
-    <section class="py-24 px-6 bg-white">
+    <section class="py-20 bg-white px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black italic mb-4">Te entiendo perfectamente...</h2>
+                <div class="h-1.5 w-24 bg-coral mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex gap-4 p-6 bg-crema rounded-3xl border-l-8 border-red-400">
+                        <i class="fas fa-times-circle text-red-400 text-2xl mt-1"></i>
+                        <p class="text-lg italic text-slate-700">"Tengo pánico de que se atragante y no saber qué hacer."</p>
+                    </div>
+                    <div class="flex gap-4 p-6 bg-crema rounded-3xl border-l-8 border-red-400">
+                        <i class="fas fa-times-circle text-red-400 text-2xl mt-1"></i>
+                        <p class="text-lg italic text-slate-700">"Siento que siempre le doy lo mismo y no se nutre bien."</p>
+                    </div>
+                    <div class="flex gap-4 p-6 bg-crema rounded-3xl border-l-8 border-red-400">
+                        <i class="fas fa-times-circle text-red-400 text-2xl mt-1"></i>
+                        <p class="text-lg italic text-slate-700">"Me frustra cocinar algo con amor y que termine en el piso."</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 p-10 rounded-[3rem] text-white">
+                    <h3 class="text-3xl font-bold mb-6 italic">Esto no tiene que ser una batalla.</h3>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        La alimentación complementaria es la base de la salud de tu bebé para toda su vida. No dejes que el miedo te impida disfrutar de ver cómo descubre nuevos sabores y texturas.
+                    </p>
+                    <p class="text-coral font-bold italic text-xl">
+                        Nuestro sistema está diseñado para que recuperes la paz mental.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-black text-center mb-16 italic">Todo lo que recibirás:</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-book-open text-coral text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 italic">Mega Recetario</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Más de 180 recetas nutritivas: desayunos, almuerzos, snacks y cenas. Todo sin azúcar ni sal añadida.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700 font-semibold">
+                        <li><i class="fas fa-check check-icon mr-2"></i> Opciones Vegetarianas</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Recetas en 15 minutos</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Ingredientes fáciles</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-coral text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 italic">Guía de Cortes</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        La seguridad es lo primero. Te mostramos exactamente cómo cortar cada alimento según su edad.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700 font-semibold">
+                        <li><i class="fas fa-check check-icon mr-2"></i> De los 6 a los 12 meses</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Fotos reales de cortes</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Prevención de ahogos</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-coral text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 italic">Mitos y Realidades</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Despídete de los consejos anticuados. Información basada en pediatría actualizada.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700 font-semibold">
+                        <li><i class="fas fa-check check-icon mr-2"></i> Arcada vs Atragantamiento</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Cuándo empezar realmente</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Manejo de cubiertos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 text-white px-6 rounded-[4rem]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-coral font-bold uppercase tracking-widest text-sm">Regalos Exclusivos</span>
+                <h2 class="text-4xl md:text-6xl font-black italic mt-4">Inscríbete hoy y llévate gratis estos 6 Bonos:</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 bg-coral text-white text-[10px] font-bold px-6 py-2 rotate-45">GRATIS</div>
+                    <h5 class="text-coral font-bold text-xs mb-2">BONO #1</h5>
+                    <h4 class="text-xl font-bold italic mb-4">Menú de 21 Días</h4>
+                    <p class="text-sm text-slate-400 italic">No pienses más. Un calendario completo con desayuno, almuerzo y snack.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 bg-coral text-white text-[10px] font-bold px-6 py-2 rotate-45">GRATIS</div>
+                    <h5 class="text-coral font-bold text-xs mb-2">BONO #2</h5>
+                    <h4 class="text-xl font-bold italic mb-4">Guía de Alérgenos</h4>
+                    <p class="text-sm text-slate-400 italic">Aprende a introducir huevo, frutos secos y lácteos de forma segura.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 bg-coral text-white text-[10px] font-bold px-6 py-2 rotate-45">GRATIS</div>
+                    <h5 class="text-coral font-bold text-xs mb-2">BONO #3</h5>
+                    <h4 class="text-xl font-bold italic mb-4">Guía de Estreñimiento</h4>
+                    <p class="text-sm text-slate-400 italic">Alimentos laxantes y astringentes para regular su digestión.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 bg-coral text-white text-[10px] font-bold px-6 py-2 rotate-45">GRATIS</div>
+                    <h5 class="text-coral font-bold text-xs mb-2">BONO #4</h5>
+                    <h4 class="text-xl font-bold italic mb-4">Snacks Saludables</h4>
+                    <p class="text-sm text-slate-400 italic">Más de 20 ideas rápidas para las meriendas fuera de casa.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 bg-coral text-white text-[10px] font-bold px-6 py-2 rotate-45">GRATIS</div>
+                    <h5 class="text-coral font-bold text-xs mb-2">BONO #5</h5>
+                    <h4 class="text-xl font-bold italic mb-4">Lista de Compras</h4>
+                    <p class="text-sm text-slate-400 italic">Ahorra dinero comprando solo lo que tu bebé realmente necesita.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 bg-coral text-white text-[10px] font-bold px-6 py-2 rotate-45">GRATIS</div>
+                    <h5 class="text-coral font-bold text-xs mb-2">BONO #6</h5>
+                    <h4 class="text-xl font-bold italic mb-4">Comunidad VIP</h4>
+                    <p class="text-sm text-slate-400 italic">Acceso a nuestro grupo exclusivo de mamás para resolver dudas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 italic">¿Te sientes identificada con esto?</h2>
-            <div class="space-y-6">
-                <div class="flex items-start gap-5 p-6 bg-baby-warm rounded-3xl border-l-8 border-coral shadow-sm">
-                    <div class="text-coral text-2xl pt-1"><i class="fas fa-times-circle"></i></div>
-                    <p class="text-lg text-gray-700 italic font-semibold leading-snug">Tienes pánico de que tu bebé se ahogue con un pedacito de comida sólida.</p>
-                </div>
-                <div class="flex items-start gap-5 p-6 bg-baby-warm rounded-3xl border-l-8 border-coral shadow-sm">
-                    <div class="text-coral text-2xl pt-1"><i class="fas fa-times-circle"></i></div>
-                    <p class="text-lg text-gray-700 italic font-semibold leading-snug">No sabes si está comiendo lo suficiente para crecer sano y fuerte.</p>
-                </div>
-                <div class="flex items-start gap-5 p-6 bg-baby-warm rounded-3xl border-l-8 border-coral shadow-sm">
-                    <div class="text-coral text-2xl pt-1"><i class="fas fa-times-circle"></i></div>
-                    <p class="text-lg text-gray-700 italic font-semibold leading-snug">Estás cansada de cocinar y que todo termine tirado en el suelo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 bg-slate-900 text-white rounded-[4rem] mx-4 md:mx-10">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-bold text-center mb-20 italic">Imagina esto...</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="text-center group">
-                    <div class="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-coral transition-all duration-500">
-                        <i class="fas fa-shield-alt text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 italic">Confianza Total</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed italic">Saber exactamente cómo cortar cada alimento para que sea 100% seguro.</p>
-                </div>
-                <div class="text-center group">
-                    <div class="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-coral transition-all duration-500">
-                        <i class="fas fa-heart text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 italic">Bebé Sano</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed italic">Asegurar que recibe todos los nutrientes, vitaminas y minerales.</p>
-                </div>
-                <div class="text-center group">
-                    <div class="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-coral transition-all duration-500">
-                        <i class="fas fa-smile-beam text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 italic">Cero Estrés</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed italic">Disfrutar de la comida en familia sin llantos ni miedos.</p>
-                </div>
-                <div class="text-center group">
-                    <div class="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-coral transition-all duration-500">
-                        <i class="fas fa-mobile-alt text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 italic">Acceso Fácil</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed italic">Todo el material organizado en tu celular, listo para consultar en la cocina.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <span class="text-coral font-bold uppercase tracking-widest text-sm italic">¡No es solo un recetario!</span>
-                <h2 class="text-4xl md:text-6xl font-bold italic mt-4">Lote de Regalos Irresistibles</h2>
-                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Si te inscribes hoy, te llevas el sistema completo de alimentación complementaria.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-baby-warm p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-center border border-gray-100 shadow-sm">
-                    <div class="w-full md:w-48 h-48 bg-white rounded-3xl flex items-center justify-center shadow-inner overflow-hidden flex-shrink-0">
-                        <i class="fas fa-book-open text-6xl text-coral/20"></i>
-                    </div>
-                    <div>
-                        <span class="bg-coral text-white text-[10px] font-black px-3 py-1 rounded-full uppercase italic mb-2 inline-block">Bono #1</span>
-                        <h4 class="text-2xl font-bold mb-2 italic tracking-tight leading-none">Guía de Introducción al BLW</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed italic mb-4">Aprende los fundamentos para que tu bebé empiece a comer solo con éxito.</p>
-                        <p class="text-coral font-bold text-lg italic">VALOR: <span class="line-through text-gray-300 font-normal">$27.00</span> ¡GRATIS!</p>
-                    </div>
-                </div>
-                <div class="bg-baby-warm p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-center border border-gray-100 shadow-sm">
-                    <div class="w-full md:w-48 h-48 bg-white rounded-3xl flex items-center justify-center shadow-inner overflow-hidden flex-shrink-0">
-                        <i class="fas fa-blender text-6xl text-coral/20"></i>
-                    </div>
-                    <div>
-                        <span class="bg-coral text-white text-[10px] font-black px-3 py-1 rounded-full uppercase italic mb-2 inline-block">Bono #2</span>
-                        <h4 class="text-2xl font-bold mb-2 italic tracking-tight leading-none">Batidos para Subida de Peso</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed italic mb-4">Recetas densas en nutrientes para bebés que necesitan un extra de peso.</p>
-                        <p class="text-coral font-bold text-lg italic">VALOR: <span class="line-through text-gray-300 font-normal">$19.00</span> ¡GRATIS!</p>
-                    </div>
-                </div>
-                <div class="bg-baby-warm p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-center border border-gray-100 shadow-sm">
-                    <div class="w-full md:w-48 h-48 bg-white rounded-3xl flex items-center justify-center shadow-inner overflow-hidden flex-shrink-0">
-                        <i class="fas fa-exclamation-circle text-6xl text-coral/20"></i>
-                    </div>
-                    <div>
-                        <span class="bg-coral text-white text-[10px] font-black px-3 py-1 rounded-full uppercase italic mb-2 inline-block">Bono #3</span>
-                        <h4 class="text-2xl font-bold mb-2 italic tracking-tight leading-none">Guía de Alérgenos</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed italic mb-4">Cómo y cuándo introducir los 9 alérgenos principales sin miedo.</p>
-                        <p class="text-coral font-bold text-lg italic">VALOR: <span class="line-through text-gray-300 font-normal">$25.00</span> ¡GRATIS!</p>
-                    </div>
-                </div>
-                <div class="bg-baby-warm p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-center border border-gray-100 shadow-sm">
-                    <div class="w-full md:w-48 h-48 bg-white rounded-3xl flex items-center justify-center shadow-inner overflow-hidden flex-shrink-0">
-                        <i class="fas fa-check-double text-6xl text-coral/20"></i>
-                    </div>
-                    <div>
-                        <span class="bg-coral text-white text-[10px] font-black px-3 py-1 rounded-full uppercase italic mb-2 inline-block">Bono #4</span>
-                        <h4 class="text-2xl font-bold mb-2 italic tracking-tight leading-none">Menú de 3 Semanas</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed italic mb-4">La planificación completa para que no pienses "qué cocino hoy".</p>
-                        <p class="text-coral font-bold text-lg italic">VALOR: <span class="line-through text-gray-300 font-normal">$15.00</span> ¡GRATIS!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 bg-baby-warm">
-        <div class="max-w-3xl mx-auto bg-white rounded-[4rem] overflow-hidden shadow-2xl border border-gray-100">
-            <div class="bg-slate-900 p-10 text-white text-center">
-                <h3 class="text-4xl font-black italic tracking-tight">¡LLEVA TODO HOY!</h3>
-            </div>
-            <div class="p-10 md:p-16">
-                <ul class="space-y-4 mb-12">
-                    <li class="flex justify-between border-b border-gray-50 pb-2 italic"><span>📖 Mega Recetario 180+ Recetas</span> <span class="text-gray-400">$67.00</span></li>
-                    <li class="flex justify-between border-b border-gray-50 pb-2 italic"><span>🎁 Bono 1: Guía BLW</span> <span class="text-coral font-bold">GRATIS</span></li>
-                    <li class="flex justify-between border-b border-gray-50 pb-2 italic"><span>🎁 Bono 2: Batidos Peso</span> <span class="text-coral font-bold">GRATIS</span></li>
-                    <li class="flex justify-between border-b border-gray-50 pb-2 italic"><span>🎁 Bono 3: Guía Alérgenos</span> <span class="text-coral font-bold">GRATIS</span></li>
-                    <li class="flex justify-between border-b border-gray-50 pb-2 italic"><span>🎁 Bono 4: Menú de 3 Semanas</span> <span class="text-coral font-bold">GRATIS</span></li>
-                    <li class="flex justify-between pt-4 text-xl font-black italic"><span>VALOR TOTAL:</span> <span>$197.00 USD</span></li>
-                </ul>
-
-                <div class="text-center mb-12">
-                    <p class="text-gray-400 line-through text-2xl font-bold mb-2 italic">HOY SOLO PAGAS:</p>
+            <div class="bg-white rounded-[4rem] shadow-premium p-8 md:p-20 text-center relative z-10 border-2 border-coral">
+                <h2 class="text-4xl md:text-6xl font-black mb-8 italic text-slate-900">¡Accede a todo el sistema ahora mismo!</h2>
+                
+                <div class="mb-10 inline-block bg-crema px-8 py-4 rounded-3xl border-2 border-dashed border-coral/30">
+                    <p class="text-slate-400 line-through text-2xl mb-2 italic">Valor Total: $197.00 USD</p>
                     <div class="flex items-center justify-center gap-2">
-                        <span class="text-9xl font-black text-coral leading-none">$9.90</span>
-                        <span class="text-2xl font-bold mt-8">USD</span>
+                        <span class="text-8xl md:text-9xl font-black text-coral leading-none">$9.99</span>
+                        <div class="text-left">
+                            <p class="text-2xl font-bold text-slate-900 uppercase">USD</p>
+                            <p class="text-xs font-bold text-green-500 italic">95% DESCUENTO</p>
+                        </div>
                     </div>
-                    <p class="text-yellow-600 font-black mt-6 tracking-widest text-xs uppercase animate-bounce">⚠️ ÚNICO PAGO. ACCESO PARA SIEMPRE.</p>
                 </div>
 
-                <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow block w-full py-8 rounded-3xl text-white text-3xl font-black uppercase italic text-center shadow-xl">
-                    ¡ACCEDER AHORA!
+                <div class="grid md:grid-cols-2 gap-4 mb-10 text-left max-w-lg mx-auto italic font-bold text-slate-600">
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-coral"></i> 180+ Recetas BLW</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-coral"></i> Guía de Cortes Seguros</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-coral"></i> 6 Bonos de Regalo</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-coral"></i> Acceso Vitalicio</div>
+                </div>
+
+                <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-pulse block w-full py-8 rounded-[2.5rem] text-white font-black text-3xl italic uppercase shadow-xl mb-6">
+                    ¡Sí, quiero el descuento!
                 </a>
                 
-                <div class="mt-12 flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl border-2 border-dashed border-yellow-200 bg-yellow-50/30">
-                    <i class="fas fa-shield-check text-5xl text-yellow-500"></i>
-                    <div class="text-left">
-                        <p class="font-black text-sm uppercase italic">7 Días de Garantía Total</p>
-                        <p class="text-xs text-gray-500 italic">Prueba el material. Si no te quita el miedo, te devolvemos el 100% de tu dinero sin preguntas.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 pt-8 border-t border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-shield-alt text-3xl text-slate-300"></i>
+                        <div class="text-[10px] text-left uppercase font-bold text-slate-400 tracking-widest">Pago 100%<br>Seguro</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-bolt text-3xl text-slate-300"></i>
+                        <div class="text-[10px] text-left uppercase font-bold text-slate-400 tracking-widest">Acceso<br>Inmediato</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-infinity text-3xl text-slate-300"></i>
+                        <div class="text-[10px] text-left uppercase font-bold text-slate-400 tracking-widest">Un solo<br>pago</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-white overflow-hidden">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 italic">Lo que dicen otras mamás...</h2>
-            <div class="grid md:grid-cols-3 gap-8 italic">
-                <div class="p-8 rounded-3xl bg-baby-warm relative border border-gray-100 shadow-sm">
-                    <div class="text-yellow-400 mb-4 tracking-widest">★★★★★</div>
-                    <p class="text-gray-600 mb-6 leading-relaxed italic">"Tenía pánico de darle trozos, pero con la guía entendí cómo hacerlo seguro. Mi bebé de 7 meses ya come solito y le encanta."</p>
-                    <p class="font-black text-slate-800">— Mariana P.</p>
-                </div>
-                <div class="p-8 rounded-3xl bg-white border-2 border-coral relative shadow-xl transform md:scale-110 z-10">
-                    <div class="text-yellow-400 mb-4 tracking-widest">★★★★★</div>
-                    <p class="text-gray-600 mb-6 leading-relaxed italic">"Los batidos para subir de peso fueron mi salvación. Mi pediatra notó el cambio en el último control. ¡Gracias!"</p>
-                    <p class="font-black text-slate-800">— Carolina R.</p>
-                </div>
-                <div class="p-8 rounded-3xl bg-baby-warm relative border border-gray-100 shadow-sm">
-                    <div class="text-yellow-400 mb-4 tracking-widest">★★★★★</div>
-                    <p class="text-gray-600 mb-6 leading-relaxed italic">"Súper completa. No solo recetas, sino que te enseña a cocinar sano con lo que tienes en casa. Muy recomendable."</p>
-                    <p class="font-black text-slate-800">— Lucía M.</p>
-                </div>
+    <section class="py-20 px-6 bg-crema">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 italic">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-3xl p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-lg italic list-none">
+                        ¿Cómo recibo el material?
+                        <span class="group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        Una vez realizado el pago, recibirás un correo electrónico automático de Hotmart con tus datos de acceso. Podrás descargarlo en tu celular, tablet o computadora inmediatamente.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-3xl p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-lg italic list-none">
+                        ¿Sirve si mi bebé ya tiene 9 o 10 meses?
+                        <span class="group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        ¡Por supuesto! La guía cubre desde los 6 meses hasta los 2 años. Nunca es tarde para mejorar su relación con la comida y asegurar que reciba los nutrientes adecuados.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-3xl p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-lg italic list-none">
+                        ¿Tengo que pagar todos los meses?
+                        <span class="group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        No. Es un único pago de $9.99 USD. Tienes acceso de por vida al material y a todas las actualizaciones futuras que hagamos sin pagar un centavo más.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-3xl p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-lg italic list-none">
+                        ¿Qué pasa si no me gusta?
+                        <span class="group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        Tienes 7 días de garantía incondicional. Si por alguna razón sientes que no es para ti, nos escribes y te devolvemos el 100% de tu dinero de forma automática. El riesgo es todo nuestro.
+                    </p>
+                </details>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 bg-slate-900 text-center text-gray-500 px-6">
-        <p class="text-white text-xs font-black uppercase tracking-[0.4em] mb-4">&copy; 2026 Alimentación Segura</p>
-        <p class="max-w-2xl mx-auto text-[10px] uppercase leading-relaxed font-bold opacity-30">Este producto no sustituye el consejo médico profesional. Consulte siempre con su pediatra antes de realizar cambios en la dieta de su bebé.</p>
+    <footer class="py-20 bg-slate-900 text-white px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-2xl font-bold italic mb-8">Alimentación Segura</h3>
+            <div class="flex justify-center gap-6 mb-12 text-slate-400">
+                <a href="#" class="hover:text-coral transition-colors">Términos y Condiciones</a>
+                <a href="#" class="hover:text-coral transition-colors">Políticas de Privacidad</a>
+                <a href="#" class="hover:text-coral transition-colors">Contacto</a>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest leading-loose max-w-3xl mx-auto">
+                DESCARGO DE RESPONSABILIDAD: Los resultados pueden variar de un bebé a otro. Este producto no sustituye el consejo de un pediatra o nutricionista infantil. Toda la información es educativa. Facebook(tm) no tiene ninguna relación con este sitio web.
+            </p>
+            
+            <div class="mt-12 h-px bg-white/5"></div>
+            <p class="mt-12 text-slate-600 text-[10px] font-bold uppercase tracking-[0.5em]">
+                &copy; 2026 • Creado con ❤️ para mamás reales
+            </p>
+        </div>
     </footer>
 
     <script>
-        let slots = 14;
-        const interval = setInterval(() => {
-            if(slots > 3) {
-                slots--;
-                document.getElementById('slots').innerText = slots;
-            }
-        }, 30000);
-    </script>
-</body>
-</html>
+        function startTimer(duration, display) {
+            var timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
